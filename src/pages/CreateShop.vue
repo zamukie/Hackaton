@@ -1,10 +1,13 @@
 <template>
 <div>
-    <div class="login">
-        <p>Login</p>
+    <div class="register">
+        <p>Create Shop</p>
         <div class="test">
-            <form @submit.prevent="login" class="container">
-                <input class="textbox" v-model="email" type="email" placeholder="Email" required>
+            <form @submit.prevent="createShop" class="container">
+                <input class="textbox" v-model="name" type="text" placeholder="Name" required>
+                <input class="textbox" v-model="description" type="text" placeholder="Descrioption" required>
+                <input class="textbox" v-model="category" type="text" placeholder="Category" required>
+                <input class="textbox" v-model="email" type="email" placeholder="Eamil" required>
                 <input class="textbox" v-model="password" type="password" placeholder="Password" required>
                 <input type="submit" class="btn-submit">
             </form>
@@ -14,50 +17,46 @@
 </template>
 
 <script>
-import store from '../store'
-import apilogin from '../service/login'
+import createShop from '../service/createshop'
 
 export default {
     data() {
         return {
+            name: '',
+            description: '',
+            category: '',
             email: '',
             password: '',
-            isProcessing: false,
         }
     },
 
     methods: {
-        login() {
-            apilogin(this.email, this.password)
-                .then((response) => {
-                    if (response.status === 401) {
-                        this.$swal({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'Email or Password invalid!'
-                        });
-                    } else {
-                        return response.json()
-                    }
+        createShop() {
+            const data = {
+                name: this.name,
+                description: this.description,
+                category: this.category,
+                email: this.email,
+                password: this.password
+            }
+            createShop(data)
+                .then((response) => JSON.stringify(response))
+                .then(data => {
+                    console.log('data', data);
+                    this.$swal({
+                        icon: 'success',
+                        title: 'Success',
+                        text: 'Register is success'
+                    });
                 })
-                .then((response) => {
-                    store.setUser(response.token)
-                    alert('success')
-                })
+            this.$router.push('/login')
         }
     }
 }
 </script>
 
 <style>
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-} */
-
-.login {
+.register {
     height: 100vh;
     width: 100%;
     background-image: linear-gradient(130deg, #1abc9c, #2ecc71);
@@ -66,15 +65,6 @@ export default {
     justify-content: center;
     align-items: center;
 }
-
-/* body {
-    height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(130deg, #1abc9c, #2ecc71);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 
 form.container {
     display: flex;
