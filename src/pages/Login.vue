@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-view />
+      Login Page
   </div>
 </template>
 
