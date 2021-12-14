@@ -5,7 +5,7 @@ const store = {
 
     setUser(token) {
         this.state.accessToken = token
-        localStorage.setItem('foodFatState', JSON.stringify(this.state))
+        localStorage.setItem('token', JSON.stringify(this.state))
     }
 }
 

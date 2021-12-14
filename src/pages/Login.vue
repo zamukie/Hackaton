@@ -1,13 +1,14 @@
 <template>
 <div>
     <div class="login">
-        <p>Login</p>
+        <p @click="backtohome">Login</p>
         <div class="test">
             <form @submit.prevent="login" class="container">
                 <input class="textbox" v-model="email" type="email" placeholder="Email" required>
                 <input class="textbox" v-model="password" type="password" placeholder="Password" required>
                 <input type="submit" class="btn-submit">
             </form>
+            
         </div>
     </div>
 </div>
@@ -44,6 +45,10 @@ export default {
                     store.setUser(response.token)
                     alert('success')
                 })
+        },
+
+        backtohome() {
+            this.$route.push('/')
         }
     }
 }
@@ -122,6 +127,7 @@ input {
 }
 
 .btn-submit {
+    margin: 10px;
     background: #fff;
     color: #1abc9c;
 }

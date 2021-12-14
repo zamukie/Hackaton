@@ -3,20 +3,17 @@
     <ul>
         <li :class="listClass">
             <router-link to="/">
-                อาหาร
+                หน้าหลัก
             </router-link>
         </li>
         <li :class="memberClass">
-            <router-link to="/member">
-                สมาชิก
+            <router-link to="/createshop">
+                สมัครสมาชิก
             </router-link>
         </li>
         <li :class="cartClass">
-            <router-link to="/cart">
-                รายการสั่งซื้อ
-                <span class="cartAmount" v-if="cartAmount > 0">
-                    {{ cartAmount }}
-                </span>
+            <router-link to="/login">
+                เข้าสู่ระบบ
             </router-link>
         </li>
     </ul>
@@ -32,9 +29,9 @@ export default {
 <style>
 .navbar {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-top: -40px;
+    /* flex-direction: row; */
+    /* justify-content: flex-end; */
+    /* margin-top: -40px; */
 }
 
 .navbar ul {
