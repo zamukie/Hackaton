@@ -43,7 +43,7 @@ export default {
                 })
                 .then((response) => {
                     store.setUser(response.token)
-                    alert('success')
+                    this.$router.replace('/')
                 })
         },
 

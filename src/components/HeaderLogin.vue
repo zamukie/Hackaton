@@ -10,16 +10,9 @@
         </section>
         <section class="menu">
             <ul>
-                <router-link to="/createshop">
-                    <li>Create Shop</li>
-                </router-link>
-                <router-link to="/login">
-                    <li>Login</li>
-                </router-link>
+                <b-avatar src="https://placekitten.com/300/300" size="3rem"></b-avatar>
             </ul>
         </section>
-    </div>
-    <div>
     </div>
 </div>
 </template>
