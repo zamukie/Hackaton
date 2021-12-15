@@ -1,7 +1,7 @@
-export default function getShopList(limit, offset) {
+export default function getShopList(limit, page) {
     return fetch('https://camt-shopapi.pair-co.com/shops/?' + new URLSearchParams({
         limit,
-        offset,
+        page,
     }), {
         method: 'GET',
         headers: {

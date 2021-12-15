@@ -24,5 +24,8 @@ new Vue({
   router,
   data: {
     state: store.state
+  },
+  beforeCreate() {
+    store.initial()
   }
 }).$mount('#app')

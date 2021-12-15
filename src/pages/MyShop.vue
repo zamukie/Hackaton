@@ -59,6 +59,7 @@ export default {
     },
     methods: {
         getMyShop() {
+            console.log(this.$root.state.accessToken);
             fetch('https://camt-shopapi.pair-co.com/myshop', {
                     method: 'GET',
                     headers: {

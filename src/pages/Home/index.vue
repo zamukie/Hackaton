@@ -51,7 +51,7 @@ export default {
             isLoading: false,
             shopList: [],
             pageNumber: 1,
-            limit: 100,
+            limit: 4,
             total: 0
         }
     },
