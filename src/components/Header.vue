@@ -8,6 +8,12 @@
                 </router-link>
             </div>
         </section>
+        <section class="search">
+            <div class="searchItem">
+                <input class="searchInput" type="text" placeholder="Search...">
+                <button class="btn-search"><b-icon icon="search" font-scale="2.5"></b-icon></button>
+            </div>
+        </section>
         <section class="menu">
             <ul>
                 <router-link to="/createshop">
@@ -46,26 +52,44 @@ body {
     height: 64px;
     background-image: linear-gradient(130deg, #1abc9c, #2ecc71);
 }
-
-.menu {
+.search {
     flex: 1;
+}
+.search .searchItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.search .searchInput {
+   margin: 6px;
+   color: #fff;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(248, 248, 248);
+}
+.searchInput::placeholder {
+    color: #1abc9c;
+}
+
+.searchInput:hover,
+.searchInput:focus {
+    background: #fff;
+    width: 300px;
+    color: #1abc9c;
 }
 
 .logo {
     flex: 0;
 }
-
 .logo div img {
     width: 150px;
     height: 64px;
     object-fit: contain;
 }
-
 .menu {
     flex: 1;
     margin-right: 12px;
 }
-
 .menu ul {
     list-style: none;
     margin: 0;
@@ -76,38 +100,21 @@ body {
     align-items: center;
     height: 100%;
 }
-
 .menu ul li {
     margin: 0 12px;
 }
-
-/* img {
-    width: 100px;
-    height: 100px;
+.btn-search {
+    background: #1abc9c;
+    color: #fff;
+     /* padding: 12px 0; */
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
-.logo {
-    display: flex;
-    flex-direction: row;
+.btn-search:hover {
+    background: #fff;
+    color: #1abc9c;
+    box-shadow: 0 0 10px (rgba(0, 0, 0, 0.1));
 }
-
-.header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 36px;
-    background-image: linear-gradient(130deg, #1abc9c, #2ecc71);
-}
-
-.navbar {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-end;
-}
-
-.search {
-    display: flex;
-    justify-content: flex-end;
-} */
 </style>

@@ -27,6 +27,7 @@ export default {
 
     methods: {
         viewDetail() {
+
             this.$router.push('/shopdetail')
         }
     }
